@@ -66,9 +66,9 @@ window.WEDDING_CONFIG = {
   rsvp: {
     url: "https://script.google.com/macros/s/AKfycbwkvPgGuGweJlYmj10i9sARibbQPuWLqnh9ldkz96celgW6Qm7tH0YAg8NmOwXO9Rk/exec",
     deadline: {
-      vi: "Vui lòng phản hồi trước ngày TODO",
-      en: "Kindly reply by TODO",
-    }, // TODO
+      vi: "Vui lòng phản hồi trước ngày 10/01/2027",
+      en: "Kindly reply by 10/01/2027",
+    }, // 7 days before the wedding (17/01/2027)
   },
 
   defaultGuest: "bạn thân mến",
