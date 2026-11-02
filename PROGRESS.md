@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-02 (round 39) — Live at https://td-wedding.vercel.app. og:url and og:image set to absolute https URLs; assets/img/og-preview.jpg (1200×630) generated from the monogram and title. Open: check the preview after deploy; RSVP deadline still TODO; use a custom domain later if wanted.
 - 2026-11-02 (round 38) — First commit (53a9bc6) pushed to https://github.com/nguyentuan25699/td-wedding (branch main). `example/` is git-ignored and not pushed. Open: import the repo in Vercel (framework Other, no build), then set og:url and og:image to the Vercel URL.
 - 2026-11-02 (round 37) — RSVP end-to-end works: the redeployed Code.gs writes STT, time, name, phone as text (leading 0 kept), attendance, count, side and message. Test RSVP 8 confirmed in the Sheet. Open: delete test rows 'Test RSVP 6–8'; fill `rsvp.deadline` (still TODO); the 'Cảm ơn' line is split in config now.
 - 2026-11-02 (round 36) — Thanks block: removed the 'Tuấn & Dung' line (user's call). Open: the 'Cảm ơn' line still wraps 'vui.' alone on PC.
