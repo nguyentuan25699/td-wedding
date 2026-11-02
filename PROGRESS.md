@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-03 (round 46) — Removed assets/img/name-text-edit-poster.png (unused). og-preview.jpg is a separate composed file and stays; the logo lives only in the preview image.
 - 2026-11-02 (round 45) — Owner deleted the test RSVP rows (Test RSVP 6–8) from the Sheet. Open: decide where the owner's logo appears; Messenger does not show link cards for the site (domain-level, not fixable in code).
 - 2026-11-02 (round 44) — rsvp.deadline set to 10/01/2027 (7 days before 17/01/2027) in VI and EN. Open: remove the 'Test RSVP 6–8' rows from the Sheet; decide where the owner's logo appears.
 - 2026-11-02 (round 43) — Zalo still showed the old preview (cached). og:image now has ?v=2 to force a fresh fetch. Open: re-send the link in Zalo and Messenger after deploy.
