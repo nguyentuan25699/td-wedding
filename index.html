@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thiệp cưới Tuấn &amp; Dung</title>
+<meta name="description" content="Trân trọng kính mời bạn đến dự lễ cưới của Tuấn và Dung.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Thiệp cưới Tuấn &amp; Dung">
+<meta property="og:description" content="Trân trọng kính mời bạn đến dự lễ cưới của Tuấn và Dung.">
+<!-- TODO: og:url and og:image must be absolute https URLs once the domain is chosen -->
+<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Great+Vibes&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300&text=%E5%9B%8D&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<script defer src="config.js"></script>
+<script defer src="assets/js/guest.js"></script>
+<script defer src="assets/js/flora.js"></script>
+<script defer src="assets/js/calendar.js"></script>
+<script defer src="assets/js/sketches.js"></script>
+<script defer src="assets/js/album.js"></script>
+<script defer src="assets/js/events.js"></script>
+<script defer src="assets/js/rsvp.js"></script>
+<script defer src="assets/js/main.js"></script>
+</head>
+<body class="is-locked">
+
+<!-- Wobble filter for the hand-drawn sketches (sketches.js) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="hand" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="7"/>
+    <feDisplacementMap in="SourceGraphic" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<!-- ============ COVER (envelope opening) ============ -->
+<main class="cover" id="cover">
+  <svg class="cover__watermark" viewBox="215 75 770 745" aria-hidden="true" focusable="false">
+    <defs>
+      <mask id="hy-hearts">
+        <rect x="215" y="75" width="770" height="745" fill="#fff"/>
+        <path d="M413 565C380 540 360 520 360 505C360 490 375 485 390 488C402 490 410 500 413 507C416 500 424 490 436 488C451 485 466 490 466 505C466 520 446 540 413 565Z M797 565C764 540 744 520 744 505C744 490 759 485 774 488C786 490 794 500 797 507C800 500 808 490 820 488C835 485 850 490 850 505C850 520 830 540 797 565Z" fill="#000"/>
+      </mask>
+    </defs>
+    <g mask="url(#hy-hearts)">
+      <path d="M258 178H940M410 105V250M790 105V250M268 278H545M648 278H925"/>
+      <rect class="frame" x="270" y="365" width="280" height="112" rx="35"/>
+      <rect class="frame" x="650" y="365" width="280" height="112" rx="35"/>
+      <rect x="318" y="470" width="190" height="105"/>
+      <rect x="698" y="470" width="190" height="105"/>
+      <path d="M242 575H958"/>
+      <rect class="frame" x="270" y="665" width="280" height="128" rx="35"/>
+      <rect class="frame" x="650" y="665" width="280" height="128" rx="35"/>
+    </g>
+  </svg>
+  <div class="fall" aria-hidden="true"></div>
+  <header class="cover__head">
+    <p class="cover__mark" aria-hidden="true">囍</p>
+    <p class="cover__kicker" data-i18n="title"></p>
+    <p class="cover__names" data-names></p>
+  </header>
+
+    <div class="envelope">
+    <div class="envelope__back"></div>
+    <div class="envelope__card"></div>
+    <div class="envelope__front"></div>
+    <svg class="envelope__stitch" viewBox="0 0 100 75" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M 5 28 V 70 H 95 V 28" />
+    </svg>
+    <div class="envelope__flap">
+      <svg class="envelope__stitch" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 2 66 L 50 97 L 98 66" />
+      </svg>
+    </div>
+    <button class="seal" id="seal" type="button" data-i18n-label="open">
+      <span class="seal__mark" data-monogram></span>
+    </button>
+  </div>
+
+  <p class="cover__to"><span data-i18n="dear"></span> <span class="cover__guest" id="guest"></span></p>
+  <button class="open-btn" id="open" type="button" data-i18n="open"></button>
+
+  <svg class="flora flora--load flora--bl" viewBox="0 0 160 160" data-art="mai" aria-hidden="true"></svg>
+  <svg class="flora flora--load flora--br flora--flip" viewBox="0 0 160 160" data-art="mai" aria-hidden="true"></svg>
+  <svg class="flora flora--load flora--wide flora--tl flora--vflip" viewBox="0 0 160 160" data-art="mai" data-variant="top-left" aria-hidden="true"></svg>
+  <svg class="flora flora--load flora--wide flora--tr flora--rot" viewBox="0 0 160 160" data-art="mai" data-variant="top-right" aria-hidden="true"></svg>
+</main>
+
+<!-- ============ FLOATING MUSIC TOGGLE ============ -->
+<button class="music" id="music" type="button" aria-pressed="false" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path class="music__note" d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
+  <span class="sr-only" data-music-label></span>
+</button>
+
+<div class="invite card" id="invite">
+  <svg class="flora flora--enter flora--fixed flora--tl" viewBox="0 0 160 160" data-art="mai" data-variant="top-left" aria-hidden="true"></svg>
+  <svg class="flora flora--enter flora--fixed flora--tr flora--rot" viewBox="0 0 160 160" data-art="mai" data-variant="top-right" aria-hidden="true"></svg>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero section">
+    <p class="kicker reveal" data-i18n="heroKicker"></p>
+    <div class="hero__photo reveal reveal--left" id="hero-photo"></div>
+    <h2 class="hero__names script reveal" id="hero-names" data-stack-names></h2>
+    <p class="hero__lead reveal" data-i18n="heroLead"></p>
+    <div class="date reveal" id="hero-date"></div>
+    <p class="hero__lunar reveal" id="hero-lunar"></p>
+    <blockquote class="hero__quote reveal" data-i18n="heroQuote"></blockquote>
+  </section>
+
+  <!-- ============ FAMILY ============ -->
+  <section class="family section" aria-labelledby="family-title">
+    <div class="divider reveal"><span class="hy">囍</span></div>
+    <h2 class="title reveal" id="family-title" data-i18n="familyTitle"></h2>
+    <p class="family__intro reveal" data-i18n="familyIntro"></p>
+    <div class="family__tree">
+      <div class="family__grid">
+        <div class="family__col reveal reveal--left">
+          <div class="family__art" data-house="houseGroom" aria-hidden="true"></div>
+          <p class="kicker" data-i18n="nhaTrai"></p>
+          <p class="family__parent" data-groom-father></p>
+          <p class="family__parent" data-groom-mother></p>
+          <p class="addr" data-groom-address hidden></p>
+        </div>
+        <div class="family__col reveal reveal--right">
+          <div class="family__art" data-house="houseBride" aria-hidden="true"></div>
+          <p class="kicker" data-i18n="nhaGai"></p>
+          <p class="family__parent" data-bride-father></p>
+          <p class="family__parent" data-bride-mother></p>
+          <p class="addr" data-bride-address hidden></p>
+        </div>
+      </div>
+      <div class="family__thread reveal" id="family-thread" aria-hidden="true"></div>
+      <div class="family__couple">
+        <div class="family__col reveal reveal--left">
+          <p class="kicker" data-i18n="groomLabel"></p>
+          <p class="family__name" data-groom-name></p>
+        </div>
+        <div class="family__col reveal reveal--right">
+          <p class="kicker" data-i18n="brideLabel"></p>
+          <p class="family__name" data-bride-name></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EVENTS (built by events.js) ============ -->
+  <section class="events section" aria-labelledby="events-title">
+    <h2 class="title reveal" id="events-title" data-i18n="eventsTitle"></h2>
+    <div class="events__list" id="events"></div>
+  </section>
+
+  <!-- ============ PROGRAMME (built by events.js) ============ -->
+  <section class="program section" id="program-section" aria-labelledby="program-title">
+    <h2 class="title reveal" id="program-title" data-i18n="programTitle"></h2>
+    <p class="program__date reveal" id="program-date"></p>
+    <ol class="program__list" id="program"></ol>
+  </section>
+
+  <!-- ============ DATE (calendar.style in config.js: 'bloc' tear-off or 'page' month; ?cal= overrides) ============ -->
+  <section class="when section" aria-labelledby="when-title">
+    <p class="kicker reveal" id="when-title" data-i18n="whenTitle"></p>
+    <div class="when reveal" id="when"></div>
+    <p class="when__left reveal" id="when-left"></p>
+  </section>
+
+  <!-- ============ ALBUM (album.js) ============ -->
+  <section class="section" aria-labelledby="album-title">
+    <h2 class="title reveal" id="album-title" data-i18n="albumTitle"></h2>
+    <div class="album reveal" id="album"></div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section class="rsvp section" id="rsvp" aria-labelledby="rsvp-title">
+    <div class="divider reveal"><span class="hy">囍</span></div>
+    <h2 class="title reveal" id="rsvp-title" data-i18n="rsvpTitle"></h2>
+    <p class="muted reveal" data-deadline></p>
+
+    <form class="form reveal" id="rsvp-form" novalidate>
+      <!-- Honeypot: hidden from people and autofill; simple bots fill it -->
+      <div class="hp" aria-hidden="true">
+        <label for="f-hp">Leave empty</label>
+        <input id="f-hp" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="f-name"><span data-i18n="nameLabel"></span> <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-name" name="name" type="text" autocomplete="name" maxlength="40" required>
+      </div>
+
+      <div class="field">
+        <label for="f-phone"><span data-i18n="phoneLabel"></span> <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="15" required>
+      </div>
+
+      <fieldset class="field">
+        <legend><span data-i18n="attendLabel"></span> <span class="req" aria-hidden="true">*</span></legend>
+        <div class="choices choices--stack">
+          <label class="choice"><input type="radio" name="attend" value="yes" checked><span data-i18n="attendYes"></span></label>
+          <label class="choice"><input type="radio" name="attend" value="no"><span data-i18n="attendNo"></span></label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="f-count"><span data-i18n="countLabel"></span></label>
+        <input id="f-count" name="count" type="number" inputmode="numeric" min="1" max="10" value="1">
+      </div>
+
+      <fieldset class="field">
+        <legend data-i18n="guestOfLabel"></legend>
+        <div class="choices choices--row">
+          <label class="choice choice--pill"><input type="radio" name="guestOf" value="bride" checked><span data-i18n="nhaGai"></span></label>
+          <label class="choice choice--pill"><input type="radio" name="guestOf" value="groom"><span data-i18n="nhaTrai"></span></label>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label for="f-message" data-i18n="messageLabel"></label>
+        <textarea id="f-message" name="message" rows="3" maxlength="1000"></textarea>
+      </div>
+
+      <button class="btn btn--solid btn--block" id="rsvp-submit" type="submit" data-i18n="submit"></button>
+      <p class="rsvp__status" id="rsvp-status" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="thanks" id="thanks" hidden tabindex="-1">
+      <div class="seal seal--small" aria-hidden="true"><span class="hy">囍</span></div>
+      <p class="thanks__text" data-i18n="thanksTitle"></p>
+    </div>
+  </section>
+
+  <!-- ============ CLOSING ============ -->
+  <footer class="closing section">
+    <div class="monogram reveal" aria-hidden="true" data-monogram></div>
+    <h2 class="title reveal" data-i18n="closingTitle"></h2>
+    <p class="muted reveal" data-i18n="closingText"></p>
+    <p class="closing__names script reveal" data-names></p>
+    <span class="hy closing__hy reveal" aria-hidden="true">囍</span>
+    <a class="credit" href="https://github.com/quanbui210/wedding-invitation" target="_blank" rel="noopener" data-i18n-label="credit">
+      <svg class="credit__icon" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="17" r="4"/><circle cx="30.7" cy="21.8" r="4"/><circle cx="28.1" cy="29.7" r="4"/>
+        <circle cx="19.9" cy="29.7" r="4"/><circle cx="17.3" cy="21.8" r="4"/><circle cx="24" cy="24" r="2"/>
+        <path d="M24 33 Q25 39 30 44"/>
+      </svg>
+    </a>
+  </footer>
+</div>
+
+<!-- Falling petals stay on screen while the guest scrolls (fixed, see .fall--invite) -->
+<div class="fall fall--invite" aria-hidden="true"></div>
+
+<audio id="bgm" preload="none" loop></audio>
+
+</body>
+</html>
