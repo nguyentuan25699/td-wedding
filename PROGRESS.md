@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-02 (round 42) — Added assets/img/name-text-edit-poster.png (the owner's logo with names and date, cropped, 852×900, transparent). Not used in the page yet; the og-preview uses it. Open: decide where it appears.
 - 2026-11-02 (round 41) — og-preview.jpg now uses the owner's logo (Name Text Edit Poster.png, cropped to its content and placed on burgundy at 1200×630). Open: re-scrape the share link to refresh the cached preview.
 - 2026-11-02 (round 40) — og-preview.jpg redrawn: larger monogram, names, the solar date from config (Chủ nhật · 17.01.2027) and the invitation line. Open: re-scrape the link in the share debugger to refresh the cached preview.
 - 2026-11-02 (round 39) — Live at https://td-wedding.vercel.app. og:url and og:image set to absolute https URLs; assets/img/og-preview.jpg (1200×630) generated from the monogram and title. Open: check the preview after deploy; RSVP deadline still TODO; use a custom domain later if wanted.
