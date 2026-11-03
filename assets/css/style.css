@@ -369,6 +369,7 @@ a { color: inherit; }
   top: 0;
   left: var(--x);
   opacity: 0;
+  filter: blur(.5px); /* softens the petals a little */
   animation: petal-fall var(--t) linear var(--d) infinite both;
 }
 .fall__leaf {
@@ -392,8 +393,8 @@ a { color: inherit; }
 .fall--invite { position: fixed; z-index: 5; }
 @keyframes petal-fall {
   0% { opacity: 0; transform: translate3d(0, -8dvh, 0); }
-  8% { opacity: .7; }
-  92% { opacity: .7; }
+  8% { opacity: .5; }
+  92% { opacity: .5; }
   100% { opacity: 0; transform: translate3d(var(--dx), 108dvh, 0); }
 }
 @keyframes petal-sway {
