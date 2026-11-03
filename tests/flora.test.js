@@ -70,7 +70,7 @@ test('falling petals: the count is as asked, and each one stays in its range', (
   for (const p of petals) {
     assert.ok(p.left >= 0 && p.left <= 100, 'left in the cover');
     assert.ok(p.delay >= 0 && p.delay <= 7000, 'starts at different times');
-    assert.ok(p.duration >= 9000 && p.duration <= 13000, 'a slow fall, about 9 to 13 seconds');
+    assert.ok(p.duration >= 14000 && p.duration <= 18000, 'a slow fall, about 14 to 18 seconds');
     assert.ok(p.size >= 12 && p.size <= 20, 'petal size');
     assert.ok(p.period >= 1800 && p.period <= 3200, 'sway period');
     assert.ok(p.amp >= 24 && p.amp <= 58, 'sway amplitude');
