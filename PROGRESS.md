@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-04 (round 49) — Petal fall slowed to 20–26 s (was 14–18 s), per the owner's reference demo. flora.test.js duration range updated. Open: the demo itself was not seen; compare on a real phone.
 - 2026-11-03 (round 48) — Petal fall slowed again: 14–18 s per fall (was 11–13 s). flora.test.js duration range updated to match.
 - 2026-11-03 (round 47) — Falling petals: opacity .7 → .5, light blur(.5px), fall 11–13 s (was 9–13 s), sideways drift ×1.4 and sway amplitude 24–58 px (was 14–40). flora.test.js sway range updated to match. Open: check on a real phone.
 - 2026-11-03 (round 46) — Removed assets/img/name-text-edit-poster.png (unused). og-preview.jpg is a separate composed file and stays; the logo lives only in the preview image.

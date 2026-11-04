@@ -229,7 +229,7 @@
     var rand = random(seed);
     var petals = [];
     for (var i = 0; i < count; i++) {
-      var duration = Math.round(14000 + rand() * 4000);
+      var duration = Math.round(20000 + rand() * 6000);
       var period = Math.round(1800 + rand() * 1400);
       petals.push({
         left: Math.round(rand() * 100),
