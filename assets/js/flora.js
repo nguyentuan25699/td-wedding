@@ -229,8 +229,8 @@
     var rand = random(seed);
     var petals = [];
     for (var i = 0; i < count; i++) {
-      var duration = Math.round(20000 + rand() * 6000);
-      var period = Math.round(1800 + rand() * 1400);
+      var duration = Math.round(28000 + rand() * 8000);
+      var period = Math.round(4000 + rand() * 2000);
       petals.push({
         left: Math.round(rand() * 100),
         drift: Math.round((rand() - 0.5) * 170),
