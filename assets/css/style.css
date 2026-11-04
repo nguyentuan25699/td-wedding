@@ -393,8 +393,8 @@ a { color: inherit; }
 .fall--invite { position: fixed; z-index: 5; }
 @keyframes petal-fall {
   0% { opacity: 0; transform: translate3d(0, -8dvh, 0); }
-  8% { opacity: .5; }
-  92% { opacity: .5; }
+  8% { opacity: .35; }
+  92% { opacity: .35; }
   100% { opacity: 0; transform: translate3d(var(--dx), 108dvh, 0); }
 }
 @keyframes petal-sway {
