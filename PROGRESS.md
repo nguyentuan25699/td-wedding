@@ -72,6 +72,8 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-04 (round 57) — Cover note added at the bottom of the envelope screen (VI/EN config keys coverNote), with a 😂 icon, centred and balanced over two lines; hidden with the cover when the envelope opens. Checked at 390px. Open: check on a real phone and in-app browser.
+- 2026-11-04 (round 56) — Lunar date on two lines ("Tức ngày 10 tháng 12 / năm Bính Ngọ") via \n in config.js date.lunar, with white-space: pre-line on .event__sub and .hero__lunar. Added margin-top 6px to .event__sub so the value no longer sits tight under the ÂM LỊCH label. Checked by screenshot at 1280. Lunar date still NEEDS MANUAL CHECK.
 - 2026-11-04 (round 55) — Cover watermark redrawn as the reference 囍 (rounded strokes, heart cut-outs via a mask), replacing the text 囍. Checked on desktop; the envelope covers part of the hearts. Open: check on a phone.
 - 2026-11-04 (round 54) — The hand-drawn Hỷ SVG watermark showed broken joins between stems and frames. Replaced with the 囍 text watermark (font var(--font-mark), min(88dvh, 90vw), burgundy at .06), as before. The SVG and its CSS are removed.
 - 2026-11-04 (round 53) — Falling petals fainter: peak opacity .5 → .35 (owner's request).

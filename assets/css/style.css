@@ -456,6 +456,20 @@ a { color: inherit; }
   font-size: 17px;
   color: var(--ink-soft);
 }
+.cover__note {
+  position: absolute;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom) + var(--space-3));
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 96px);
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  text-wrap: balance;
+}
+.cover__note-icon { font-size: 16px; line-height: 1; vertical-align: -2px; }
 .cover__guest {
   font-family: var(--font-display);
   font-size: 22px;
@@ -555,7 +569,8 @@ a { color: inherit; }
   transition: transform 250ms var(--ease-out), opacity 250ms var(--ease-out);
 }
 .cover.is-opening .cover__head,
-.cover.is-opening .cover__to {
+.cover.is-opening .cover__to,
+.cover.is-opening .cover__note {
   opacity: 0;
   transition: opacity 300ms var(--ease-out);
 }
@@ -582,7 +597,8 @@ a { color: inherit; }
   transition: transform 650ms var(--ease-out), opacity 650ms var(--ease-out);
 }
 .cover.is-leaving .cover__head,
-.cover.is-leaving .cover__to {
+.cover.is-leaving .cover__to,
+.cover.is-leaving .cover__note {
   opacity: 0;
   transition: opacity 300ms var(--ease-out);
 }
@@ -637,7 +653,7 @@ a { color: inherit; }
 .date > span:first-child { border-right: 1px solid var(--gold-line); padding-right: 14px; }
 .date > span:last-child { border-left: 1px solid var(--gold-line); padding-left: 14px; }
 .date .date__big { padding: 0 18px; font: 300 44px/1 var(--font-display); letter-spacing: .02em; color: var(--burgundy); }
-.hero__lunar { margin: 0; font: italic 400 16px/1.5 var(--font-display); color: var(--ink-soft); }
+.hero__lunar { margin: 0; font: italic 400 16px/1.5 var(--font-display); color: var(--ink-soft); white-space: pre-line; }
 .hero__quote {
   max-width: 24em; margin: 36px auto 0; padding: 22px 0 0;
   border-top: 1px solid var(--gold-faint);
@@ -692,7 +708,7 @@ a { color: inherit; }
 .event__fact + .event__fact { border-left: 1px solid var(--gold-faint); }
 .event__label { display: block; font: 400 12px/1.6 var(--font-body); letter-spacing: .26em; text-transform: uppercase; color: var(--gold-text); }
 .event__big { display: block; margin: 6px 0 4px; font: 300 32px/1.05 var(--font-display); color: var(--ink); }
-.event__sub { display: block; font: italic 400 14px/1.35 var(--font-display); color: var(--ink-soft); }
+.event__sub { display: block; margin-top: 6px; font: italic 400 14px/1.35 var(--font-display); color: var(--ink-soft); white-space: pre-line; /* honours the \n in date.lunar */ }
 .event__lunar { margin: 14px 0 0; font: italic 400 15px/1.5 var(--font-display); color: var(--ink-soft); }
 .event__where { margin: 24px auto 0; }
 .event__addr {

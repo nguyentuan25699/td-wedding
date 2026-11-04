@@ -20,7 +20,7 @@ window.WEDDING_CONFIG = {
     iso: "2027-01-17", // YYYY-MM-DD. Empty hides the calendar and countdown.
     solar: "Chủ nhật · 17.01.2027",
     // Looked up online (baolamdong.vn, xemlicham.com), typed by hand. NEEDS MANUAL CHECK against a lunar calendar before sending.
-    lunar: "Tức ngày 10 tháng 12 năm Bính Ngọ",
+    lunar: "Tức ngày 10 tháng 12\nnăm Bính Ngọ", // \n breaks the line
   },
 
   // Nhà trai is the left column, Nhà gái the right. Each side: father, mother, address ('' hides it).
@@ -150,6 +150,7 @@ window.WEDDING_CONFIG = {
       closingTitle: "Trân trọng cảm ơn",
       closingText: "Sự hiện diện của bạn là niềm vui lớn nhất của chúng mình.",
       credit: "Mẫu thiệp gốc của quanbui210 trên GitHub",
+      coverNote: "Cảnh báo có nhạc, max volume lên nghe cho sướng",
       musicStart: "Bật nhạc",
       musicStop: "Tắt nhạc",
     },
@@ -225,6 +226,7 @@ window.WEDDING_CONFIG = {
       closingTitle: "With gratitude",
       closingText: "Your presence is the greatest joy for us.",
       credit: "Original template by quanbui210 on GitHub",
+      coverNote: "Heads up: there is music. Turn the volume up and enjoy it",
       musicStart: "Music on",
       musicStop: "Music off",
     },
