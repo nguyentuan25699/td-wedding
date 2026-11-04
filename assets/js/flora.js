@@ -234,7 +234,7 @@
       petals.push({
         left: Math.round(rand() * 100),
         drift: Math.round((rand() - 0.5) * 170),
-        delay: Math.round(rand() * 7000),
+        delay: -Math.round(rand() * duration), // negative: each petal starts part-way down, so they spread over the whole screen
         duration: duration,
         size: Math.round(12 + rand() * 8),
         period: period,

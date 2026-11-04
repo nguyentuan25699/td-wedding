@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-04 (round 51) — Petals no longer clump: the start delay is now negative and spans the whole fall (each petal starts part-way down), instead of 0–7 s. Checked by screenshot. flora.test.js delay assertion updated.
 - 2026-11-04 (round 50) — Petals matched to the reference template (example/assets/js/main.js: about 15–42 px/s, sway about 8–9 s): fall 28–36 s, sideways sway period 4–6 s (was 1.8–3.2 s). flora.test.js ranges updated. Open: compare on a real phone with the demo https://wedding-invitation-eta-topaz.vercel.app/.
 - 2026-11-04 (round 49) — Petal fall slowed to 20–26 s (was 14–18 s), per the owner's reference demo. flora.test.js duration range updated. Open: the demo itself was not seen; compare on a real phone.
 - 2026-11-03 (round 48) — Petal fall slowed again: 14–18 s per fall (was 11–13 s). flora.test.js duration range updated to match.
