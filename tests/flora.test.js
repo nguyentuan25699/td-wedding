@@ -73,7 +73,7 @@ test('falling petals: the count is as asked, and each one stays in its range', (
     assert.ok(p.duration >= 28000 && p.duration <= 36000, 'a very slow fall, about 28 to 36 seconds');
     assert.ok(p.size >= 12 && p.size <= 20, 'petal size');
     assert.ok(p.period >= 4000 && p.period <= 6000, 'a gentle sway period, 4 to 6 seconds');
-    assert.ok(p.amp >= 24 && p.amp <= 58, 'sway amplitude');
+    assert.ok(Math.abs(p.amp) >= 24 && Math.abs(p.amp) <= 58, 'sway amplitude, either side');
   }
   assert.ok(new Set(petals.map((p) => p.period)).size > 1, 'petals do not all sway the same way');
 });

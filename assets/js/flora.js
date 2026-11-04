@@ -229,16 +229,17 @@
     var rand = random(seed);
     var petals = [];
     for (var i = 0; i < count; i++) {
+      var side = i % 2 ? 1 : -1; // alternate left and right, so the petals never bunch on one side
       var duration = Math.round(28000 + rand() * 8000);
       var period = Math.round(4000 + rand() * 2000);
       petals.push({
         left: Math.round(rand() * 100),
-        drift: Math.round((rand() - 0.5) * 170),
+        drift: Math.round(side * (30 + rand() * 110)),
         delay: -Math.round(rand() * duration), // negative: each petal starts part-way down, so they spread over the whole screen
         duration: duration,
         size: Math.round(12 + rand() * 8),
         period: period,
-        amp: Math.round(24 + rand() * 34),
+        amp: Math.round(side * (24 + rand() * 34)),
         turn: Math.round(300 + rand() * 420)
       });
     }
