@@ -461,6 +461,7 @@ a { color: inherit; }
   left: 50%;
   bottom: calc(env(safe-area-inset-bottom) + var(--space-3));
   transform: translateX(-50%);
+  z-index: 1; /* above the florals, which paint after it in the DOM */
   width: max-content;
   max-width: calc(100% - 96px);
   margin: 0;
