@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-04 (round 61) — Cover note: white text (--paper-warm) with a 1px burgundy outline via text-shadow, at the owner's request. Position kept. Checked at 390px.
 - 2026-11-04 (round 60) — Cover note moved: on phones it sits in the flow directly under the Mở thiệp button (two balanced lines); from 768px up it stays absolute at the bottom of the screen. Pill background removed (owner: looked bad). Checked at 390px and 1280px.
 - 2026-11-04 (round 59) — Cover note still had florals showing through the text on phones: gave .cover__note an ivory pill background (var(--ivory)) and padding. Checked at 390px.
 - 2026-11-04 (round 58) — Cover note was hidden behind the bottom-left floral on phones (florals paint later in the DOM). Added z-index: 1 to .cover__note; checked at 390px.

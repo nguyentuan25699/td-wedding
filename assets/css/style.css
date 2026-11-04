@@ -462,7 +462,8 @@ a { color: inherit; }
   margin: 0;
   font-size: 13px;
   line-height: 1.5;
-  color: var(--ink-soft);
+  color: var(--paper-warm);
+  text-shadow: 1px 0 var(--burgundy), -1px 0 var(--burgundy), 0 1px var(--burgundy), 0 -1px var(--burgundy), 1px 1px var(--burgundy), -1px -1px var(--burgundy), 1px -1px var(--burgundy), -1px 1px var(--burgundy); /* white text with a burgundy outline */
   text-wrap: balance;
 }
 .cover__note-icon { font-size: 16px; line-height: 1; vertical-align: -2px; }
