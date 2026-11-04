@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-04 (round 59) — Cover note still had florals showing through the text on phones: gave .cover__note an ivory pill background (var(--ivory)) and padding. Checked at 390px.
 - 2026-11-04 (round 58) — Cover note was hidden behind the bottom-left floral on phones (florals paint later in the DOM). Added z-index: 1 to .cover__note; checked at 390px.
 - 2026-11-04 (round 57) — Cover note added at the bottom of the envelope screen (VI/EN config keys coverNote), with a 😂 icon, centred and balanced over two lines; hidden with the cover when the envelope opens. Checked at 390px. Open: check on a real phone and in-app browser.
 - 2026-11-04 (round 56) — Lunar date on two lines ("Tức ngày 10 tháng 12 / năm Bính Ngọ") via \n in config.js date.lunar, with white-space: pre-line on .event__sub and .hero__lunar. Added margin-top 6px to .event__sub so the value no longer sits tight under the ÂM LỊCH label. Checked by screenshot at 1280. Lunar date still NEEDS MANUAL CHECK.
