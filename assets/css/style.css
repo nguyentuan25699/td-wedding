@@ -171,19 +171,15 @@ a { color: inherit; }
 .cover.is-done { display: none; }
 
 .cover__watermark {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: 0;
+  position: absolute; left: 50%; top: 50%;
+  width: min(88dvh, 90vw); height: auto;
   transform: translate(-50%, -50%);
-  font-family: var(--font-mark);
-  font-weight: 400;
-  font-size: min(88dvh, 90vw);
-  line-height: 1;
-  color: var(--burgundy);
-  opacity: .06;
-  pointer-events: none;
+  fill: var(--burgundy); stroke: none;
+  opacity: .06; pointer-events: none;
 }
+.cover__watermark .hy-bar,
+.cover__watermark .hy-frame { fill: none; stroke: var(--burgundy); stroke-width: 55; stroke-linecap: round; stroke-linejoin: round; }
+.cover__watermark .hy-frame { stroke-linejoin: round; }
 
 .js .cover { opacity: 0; transition: opacity 400ms var(--ease-out); }
 .js.is-ready .cover { opacity: 1; }
