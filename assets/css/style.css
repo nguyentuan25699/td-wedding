@@ -457,16 +457,8 @@ a { color: inherit; }
   color: var(--ink-soft);
 }
 .cover__note {
-  position: absolute;
-  left: 50%;
-  bottom: calc(env(safe-area-inset-bottom) + var(--space-3));
-  transform: translateX(-50%);
-  z-index: 1; /* above the florals, which paint after it in the DOM */
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: var(--ivory); /* masks the florals behind the text */
   width: max-content;
-  max-width: calc(100% - 96px);
+  max-width: calc(100% - 48px);
   margin: 0;
   font-size: 13px;
   line-height: 1.5;
@@ -555,6 +547,16 @@ a { color: inherit; }
   .envelope { width: 440px; }
   .cover .seal { width: 92px; height: 92px; }
   .seal__mark { width: 64px; }
+  .cover__note {
+    position: absolute;
+    left: 50%;
+    bottom: calc(env(safe-area-inset-bottom) + var(--space-3));
+    z-index: 1;
+    margin: 0;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: calc(100% - 96px);
+  }
   .cover__to { font-size: 20px; }
   .open-btn { font-size: 18px; }
 }
