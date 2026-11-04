@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-04 (round 63) — Cover note on PC (768px+) back to the plain ink-soft text with no outline, one line at the bottom, as before. Phone keeps the white text with the thin burgundy outline. Checked at 1280px.
 - 2026-11-04 (round 62) — Cover note back at the bottom of the screen on all sizes (the under-button placement is removed), still two lines; outline thinned to .5px. Checked at 390px.
 - 2026-11-04 (round 61) — Cover note: white text (--paper-warm) with a 1px burgundy outline via text-shadow, at the owner's request. Position kept. Checked at 390px.
 - 2026-11-04 (round 60) — Cover note moved: on phones it sits in the flow directly under the Mở thiệp button (two balanced lines); from 768px up it stays absolute at the bottom of the screen. Pill background removed (owner: looked bad). Checked at 390px and 1280px.
