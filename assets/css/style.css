@@ -457,13 +457,18 @@ a { color: inherit; }
   color: var(--ink-soft);
 }
 .cover__note {
+  position: absolute;
+  left: 50%;
+  bottom: calc(env(safe-area-inset-bottom) + var(--space-3));
+  transform: translateX(-50%);
+  z-index: 1; /* above the florals, which paint after it in the DOM */
   width: max-content;
-  max-width: calc(100% - 48px);
+  max-width: calc(100% - 96px);
   margin: 0;
   font-size: 13px;
   line-height: 1.5;
   color: var(--paper-warm);
-  text-shadow: 1px 0 var(--burgundy), -1px 0 var(--burgundy), 0 1px var(--burgundy), 0 -1px var(--burgundy), 1px 1px var(--burgundy), -1px -1px var(--burgundy), 1px -1px var(--burgundy), -1px 1px var(--burgundy); /* white text with a burgundy outline */
+  text-shadow: .5px 0 var(--burgundy), -.5px 0 var(--burgundy), 0 .5px var(--burgundy), 0 -.5px var(--burgundy), .5px .5px var(--burgundy), -.5px -.5px var(--burgundy), .5px -.5px var(--burgundy), -.5px .5px var(--burgundy); /* white text with a thin burgundy outline */
   text-wrap: balance;
 }
 .cover__note-icon { font-size: 16px; line-height: 1; vertical-align: -2px; }
@@ -548,16 +553,6 @@ a { color: inherit; }
   .envelope { width: 440px; }
   .cover .seal { width: 92px; height: 92px; }
   .seal__mark { width: 64px; }
-  .cover__note {
-    position: absolute;
-    left: 50%;
-    bottom: calc(env(safe-area-inset-bottom) + var(--space-3));
-    z-index: 1;
-    margin: 0;
-    transform: translateX(-50%);
-    width: max-content;
-    max-width: calc(100% - 96px);
-  }
   .cover__to { font-size: 20px; }
   .open-btn { font-size: 18px; }
 }
