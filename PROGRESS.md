@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-12 (round 65) — Photos wired in. Hero: assets/images/web/hero.jpg (933×1400, 207 KB, q85). Album: assets/images/web/album/001–010.jpg (longest side 1000 px, q75, 85–295 KB), listed in config.photos.album in order. Full-size originals in assets/images/ are git-ignored. Open: 004, 005, 009, 010 are 85–112 KB, below the 150 KB README floor, but look sharp at this size; check on a real phone. Not committed yet.
 - 2026-11-11 (round 64) — Self-hosted on a Linux server: nginx on 127.0.0.1:80 (site block in sites-available/td-wedding, root /home/michael/stacks/wedding/site, a git clone of this repo), Cloudflare Tunnel 'td-wedding' serves https://tuan-dung-wedding.com. The live page loads. og:url and og:image now point to tuan-dung-wedding.com (og-preview.jpg?v=3). Open: re-scrape in Facebook Sharing Debugger and Zalo; the server must git pull after each push; Vercel deploy is still there.
 - 2026-11-04 (round 63) — Cover note on PC (768px+) back to the plain ink-soft text with no outline, one line at the bottom, as before. Phone keeps the white text with the thin burgundy outline. Checked at 1280px.
 - 2026-11-04 (round 62) — Cover note back at the bottom of the screen on all sizes (the under-button placement is removed), still two lines; outline thinned to .5px. Checked at 390px.

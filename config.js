@@ -54,9 +54,20 @@ window.WEDDING_CONFIG = {
 
   // Hero photo and album. Empty values show the designed placeholders.
   photos: {
-    hero: "", // TODO: portrait 3:4, under 300KB, e.g. assets/images/hero.webp
+    hero: "assets/images/web/hero.jpg", // 933×1400, 207 KB
     // Album: { src, alt, w, h } with the real pixel size of each file.
-    album: [], // TODO: 6–12 photos, 150–300KB each, e.g. assets/images/album/01.webp
+    album: [
+      { src: "assets/images/web/album/001.jpg", w: 638, h: 1000 },
+      { src: "assets/images/web/album/002.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/003.jpg", w: 1000, h: 667 },
+      { src: "assets/images/web/album/004.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/005.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/006.jpg", w: 1000, h: 666 },
+      { src: "assets/images/web/album/007.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/008.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/009.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/010.jpg", w: 666, h: 1000 },
+    ],
   },
 
   // Calendar style: 'bloc' is a tear-off wall calendar, 'page' a month page with the day circled.

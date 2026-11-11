@@ -1,3 +1,6 @@
 .DS_Store
 node_modules/
 example/
+# Full-size camera originals: only the web/ copies are published
+assets/images/*.JPG
+assets/images/*.jpg
