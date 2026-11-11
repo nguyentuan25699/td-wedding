@@ -44,13 +44,13 @@ async function visit() {
   })));
   let bytes = text.length;
   let failed = results.filter((r) => r.status !== 200).length;
-  results.forEach((r) => { if (r.status !== 200) statusCount[r.status] = (statusCount[r.status] || 0) + 1; });
+  results.forEach((r, i) => { if (r.status !== 200) countFailure(r.status, list[i]); });
   bytes += results.reduce((a, r) => a + r.bytes, 0);
   const viewerCount = Math.random() < VIEWER_CHANCE ? 1 + Math.floor(Math.random() * 3) : 0;
   for (let i = 0; i < viewerCount; i++) {
     const n = ALBUM[Math.floor(Math.random() * ALBUM.length)];
     const r = await get(`assets/images/web/full/${n}.jpg`).catch((e) => ({ status: 'ERR:' + (e.name || 'Error'), bytes: 0 }));
-    if (r.status !== 200) { failed++; statusCount[r.status] = (statusCount[r.status] || 0) + 1; }
+    if (r.status !== 200) { failed++; countFailure(r.status, 'viewer photo'); }
     bytes += r.bytes;
     await sleep(pick(800, 2000));
   }
@@ -58,6 +58,12 @@ async function visit() {
 }
 
 const statusCount = {};
+// Failures are counted per kind of file, so the summary shows where they happen
+function countFailure(status, path) {
+  const kind = path === 'viewer photo' ? path : path.includes('/images/') || path.includes('/img/') ? 'photo (Cloudflare cache)' : path;
+  const key = status + ' ' + kind;
+  statusCount[key] = (statusCount[key] || 0) + 1;
+}
 const visits = [];
 const started = performance.now();
 await Promise.all(Array.from({ length: GUESTS }, async (_, i) => {
@@ -65,6 +71,7 @@ await Promise.all(Array.from({ length: GUESTS }, async (_, i) => {
   try {
     visits.push({ ok: true, ...(await visit()) });
   } catch (e) {
+    countFailure('ERR:' + (e.name || 'Error') + (e.cause && e.cause.code ? ':' + e.cause.code : ''), 'page html');
     visits.push({ ok: false, error: (e.name || 'Error') + (e.cause && e.cause.code ? ':' + e.cause.code : ''), ms: 0, bytes: 0 });
   }
 }));
