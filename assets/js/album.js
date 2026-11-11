@@ -197,7 +197,8 @@
     render();
     state.box.hidden = false;
     document.body.classList.add('is-locked');
-    requestAnimationFrame(function () { state.box.classList.add('is-open'); });
+    void state.box.offsetHeight; // apply the hidden state first so the fade runs
+    state.box.classList.add('is-open');
     state.box.querySelector('.lightbox__close').focus();
   }
 

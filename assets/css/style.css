@@ -71,6 +71,7 @@ body {
   font-feature-settings: "lnum" 1; /* lining numerals; survives the font shorthand */
 }
 body.is-locked { overflow: hidden; height: 100%; }
+html { scrollbar-gutter: stable; } /* keeps the scrollbar space when the lightbox locks the page, so nothing jumps */
 
 img { display: block; max-width: 100%; }
 button, input, textarea { font: inherit; color: inherit; }
@@ -896,9 +897,9 @@ a.event__addr:hover span { text-decoration-color: var(--burgundy); }
 }
 .lightbox__btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.1; }
 .lightbox__stage { position: relative; display: grid; place-items: center; min-height: 0; padding: 12px 16px; touch-action: pan-y; }
-.lightbox__figure { margin: 0; max-width: 100%; max-height: 100%; display: grid; place-items: center; transition: opacity .35s var(--ease-out), transform .35s var(--ease-out); }
-.lightbox__figure img { max-height: calc(100dvh - 170px); max-width: min(100%, 900px); object-fit: contain; box-shadow: 0 0 0 1px var(--gold-line); }
-.lightbox__figure .ph { width: min(78vw, 420px); height: auto; aspect-ratio: var(--ratio, 3 / 4); max-height: calc(100dvh - 170px); }
+.lightbox__figure { margin: 0; width: 100%; height: 100%; min-height: 0; display: grid; place-items: center; transition: opacity .35s var(--ease-out), transform .35s var(--ease-out); }
+.lightbox__figure img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 0 0 1px var(--gold-line); }
+.lightbox__figure .ph { width: min(78vw, 420px); height: auto; aspect-ratio: var(--ratio, 3 / 4); max-height: 100%; }
 .lightbox__figure .ph .hy { font-size: 46px; }
 .lightbox__nav { position: absolute; top: 50%; transform: translateY(-50%); }
 .lightbox__nav--prev { left: 2px; }
