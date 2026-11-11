@@ -71,10 +71,11 @@
     state.config = config;
     state.text = text;
     var real = (config.photos && config.photos.album || []).filter(function (x) { return x && x.src; });
-    state.items = real.length
+    state.album = real.length
       ? real
       : PLACEHOLDER_LAYOUT.map(function (o) { return { src: '', w: o === 'portrait' ? 3 : 4, h: o === 'portrait' ? 4 : 3, placeholder: true }; });
 
+    state.items = state.album;
     state.items.forEach(function (item, i) {
       var kind = orientationOf(item);
       var button = el('button', 'album__item album__item--' + kind);
@@ -190,9 +191,10 @@
     });
   }
 
-  function open(i) {
+  function open(i, list) {
     if (!state.box) state.box = build();
     state.lastFocus = document.activeElement;
+    state.items = list || state.album;
     state.index = i;
     render();
     state.box.hidden = false;
@@ -222,5 +224,7 @@
     }, 180);
   }
 
-  root.WeddingAlbum = { mount: mount, orientationOf: orientationOf, wrapIndex: wrapIndex };
+  function openPhoto(item) { open(0, [item]); }
+
+  root.WeddingAlbum = { mount: mount, orientationOf: orientationOf, wrapIndex: wrapIndex, openPhoto: openPhoto };
 })(window);

@@ -54,7 +54,8 @@ window.WEDDING_CONFIG = {
 
   // Hero photo and album. Empty values show the designed placeholders.
   photos: {
-    hero: "assets/images/web/hero.jpg", // 933×1400, 207 KB
+    hero: "assets/images/web/hero.jpg", // 933×1400, 207 KB, shown on the page
+    heroFull: "assets/images/web/full/hero.jpg", // 1333×2000, opened in the viewer
     // Album: { src, full, alt, w, h }. src is the grid copy (1000 px), full the viewer copy (2000 px), w and h the real size of src.
     album: [
       { src: "assets/images/web/album/001.jpg", full: "assets/images/web/full/001.jpg", w: 666, h: 1000 },
@@ -158,6 +159,7 @@ window.WEDDING_CONFIG = {
       rsvpPhoneRequired: "Vui lòng nhập số điện thoại để chúng mình liên lạc.",
       rsvpMissing: "Mục xác nhận chưa mở. Vui lòng thử lại sau.",
       rsvpError: "Có lỗi khi gửi. Vui lòng thử lại.",
+      heroOpen: "Xem ảnh lớn",
       closingTitle: "Trân trọng cảm ơn",
       closingText: "Sự hiện diện của bạn là niềm vui lớn nhất của chúng mình.",
       credit: "Mẫu thiệp gốc của quanbui210 trên GitHub",
@@ -234,6 +236,7 @@ window.WEDDING_CONFIG = {
       rsvpPhoneRequired: "Please enter a phone number so we can reach you.",
       rsvpMissing: "The RSVP is not open yet. Please try again later.",
       rsvpError: "Something went wrong. Please try again.",
+      heroOpen: "View the larger photo",
       closingTitle: "With gratitude",
       closingText: "Your presence is the greatest joy for us.",
       credit: "Original template by quanbui210 on GitHub",

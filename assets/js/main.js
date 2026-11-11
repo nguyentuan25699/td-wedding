@@ -132,9 +132,17 @@
     var img = document.createElement('img');
     img.alt = '';
     img.decoding = 'async';
-    img.addEventListener('error', function () { img.replaceWith(placeholder()); });
+    var open = document.createElement('button');
+    open.type = 'button';
+    open.className = 'hero__open';
+    open.setAttribute('aria-label', text.heroOpen || '');
+    img.addEventListener('error', function () { open.replaceWith(placeholder()); });
     img.src = src;
-    box.appendChild(img);
+    open.appendChild(img);
+    open.addEventListener('click', function () {
+      if (window.WeddingAlbum) window.WeddingAlbum.openPhoto({ src: C.photos.heroFull || src, alt: '' });
+    });
+    box.appendChild(open);
   }
 
   function placeholder() {
