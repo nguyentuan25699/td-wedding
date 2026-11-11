@@ -54,7 +54,7 @@ window.WEDDING_CONFIG = {
 
   // Hero photo and album. Empty values show the designed placeholders.
   photos: {
-    hero: "assets/images/web/hero.jpg", // 933×1400, 207 KB, shown on the page
+    hero: "assets/images/web/hero.jpg", // 1200×1800, 255 KB, shown on the page
     heroFull: "assets/images/web/full/hero.jpg", // 1333×2000, opened in the viewer
     // Album: { src, full, alt, w, h }. src is the grid copy (1000 px), full the viewer copy (2000 px), w and h the real size of src.
     album: [

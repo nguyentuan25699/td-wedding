@@ -18,6 +18,7 @@
   --burgundy-deep: #531521;
   --gold-text: #86693C;
   --gold-line: rgba(179, 152, 105, .55);
+  --veil: rgba(250, 247, 242, .72); /* soft backing behind the viewer arrows */
   --gold-faint: rgba(179, 152, 105, .28);
   --gold-dark: #8E6F3E;
   --gold-mid: #C9AD78;
@@ -904,7 +905,7 @@ a.event__addr:hover span { text-decoration-color: var(--burgundy); }
 .hero__open:focus-visible { outline: 2px solid var(--burgundy); outline-offset: 3px; }
 .lightbox__figure .ph { width: min(78vw, 420px); height: auto; aspect-ratio: var(--ratio, 3 / 4); max-height: 100%; }
 .lightbox__figure .ph .hy { font-size: 46px; }
-.lightbox__nav { position: absolute; top: 50%; transform: translateY(-50%); }
+.lightbox__nav { position: absolute; top: 50%; transform: translateY(-50%); border-radius: 50%; background: var(--veil); box-shadow: 0 0 0 1px var(--gold-line); }
 .lightbox__nav--prev { left: 2px; }
 .lightbox__nav--next { right: 2px; }
 .lightbox__caption { min-height: 0; padding: 4px 24px max(10px, env(safe-area-inset-bottom)); text-align: center; font: italic 400 17px/1.4 var(--font-display); color: var(--ink-soft); }
@@ -1052,14 +1053,14 @@ a.event__addr:hover span { text-decoration-color: var(--burgundy); }
 
   /* Hero: arch portrait left, names and date right, one full screen */
   .hero {
-    display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
     grid-template-areas: "photo kicker" "photo names" "photo lead" "photo date" "photo lunar" "photo quote";
     align-content: center; column-gap: 7vw;
-    max-width: 1180px; min-height: 100dvh; margin: 0 auto;
+    max-width: 1280px; min-height: 100dvh; margin: 0 auto;
     padding-top: 88px; padding-bottom: 88px;
   }
   .hero > .kicker { grid-area: kicker; align-self: end; margin-bottom: 8px; }
-  .hero__photo { grid-area: photo; width: 100%; max-width: 440px; margin: 0 auto; align-self: center; }
+  .hero__photo { grid-area: photo; width: 100%; max-width: 580px; margin: 0 auto; align-self: center; }
   .hero__lead { grid-area: lead; font-size: 23px; margin: 22px auto 40px; }
   .hero__names { grid-area: names; font-size: clamp(72px, 7vw, 104px); }
   .hero .date { grid-area: date; max-width: 400px; }
