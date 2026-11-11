@@ -174,7 +174,7 @@
       fig.appendChild(placeholder(state.index, true));
     } else {
       var img = el('img');
-      img.src = item.src;
+      img.src = item.full || item.src; // the viewer shows the large copy
       img.alt = item.alt || '';
       fig.appendChild(img);
     }
@@ -186,7 +186,7 @@
     // Warm the neighbours so swiping feels instant
     [1, -1].forEach(function (d) {
       var n = state.items[(state.index + d + state.items.length) % state.items.length];
-      if (n && n.src) { var im = new Image(); im.src = n.src; }
+      if (n && n.src) { var im = new Image(); im.src = n.full || n.src; }
     });
   }
 

@@ -55,18 +55,18 @@ window.WEDDING_CONFIG = {
   // Hero photo and album. Empty values show the designed placeholders.
   photos: {
     hero: "assets/images/web/hero.jpg", // 933×1400, 207 KB
-    // Album: { src, alt, w, h } with the real pixel size of each file.
+    // Album: { src, full, alt, w, h }. src is the grid copy (1000 px), full the viewer copy (2000 px), w and h the real size of src.
     album: [
-      { src: "assets/images/web/album/001.jpg", w: 666, h: 1000 },
-      { src: "assets/images/web/album/002.jpg", w: 638, h: 1000 },
-      { src: "assets/images/web/album/003.jpg", w: 1000, h: 667 },
-      { src: "assets/images/web/album/004.jpg", w: 666, h: 1000 },
-      { src: "assets/images/web/album/005.jpg", w: 666, h: 1000 },
-      { src: "assets/images/web/album/006.jpg", w: 1000, h: 666 },
-      { src: "assets/images/web/album/007.jpg", w: 666, h: 1000 },
-      { src: "assets/images/web/album/008.jpg", w: 666, h: 1000 },
-      { src: "assets/images/web/album/009.jpg", w: 666, h: 1000 },
-      { src: "assets/images/web/album/010.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/001.jpg", full: "assets/images/web/full/001.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/002.jpg", full: "assets/images/web/full/002.jpg", w: 638, h: 1000 },
+      { src: "assets/images/web/album/003.jpg", full: "assets/images/web/full/003.jpg", w: 1000, h: 667 },
+      { src: "assets/images/web/album/004.jpg", full: "assets/images/web/full/004.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/005.jpg", full: "assets/images/web/full/005.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/006.jpg", full: "assets/images/web/full/006.jpg", w: 1000, h: 666 },
+      { src: "assets/images/web/album/007.jpg", full: "assets/images/web/full/007.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/008.jpg", full: "assets/images/web/full/008.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/009.jpg", full: "assets/images/web/full/009.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/010.jpg", full: "assets/images/web/full/010.jpg", w: 666, h: 1000 },
     ],
   },
 
