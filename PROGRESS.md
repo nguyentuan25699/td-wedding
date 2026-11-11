@@ -72,6 +72,7 @@
 - Font comparison and the calendar month are now set from `date.iso`; confirm the real date.
 
 ## Session log (newest first, keep max 10 entries)
+- 2026-11-11 (round 64) — Self-hosted on a Linux server: nginx on 127.0.0.1:80 (site block in sites-available/td-wedding, root /home/michael/stacks/wedding/site, a git clone of this repo), Cloudflare Tunnel 'td-wedding' serves https://tuan-dung-wedding.com. The live page loads. og:url and og:image now point to tuan-dung-wedding.com (og-preview.jpg?v=3). Open: re-scrape in Facebook Sharing Debugger and Zalo; the server must git pull after each push; Vercel deploy is still there.
 - 2026-11-04 (round 63) — Cover note on PC (768px+) back to the plain ink-soft text with no outline, one line at the bottom, as before. Phone keeps the white text with the thin burgundy outline. Checked at 1280px.
 - 2026-11-04 (round 62) — Cover note back at the bottom of the screen on all sizes (the under-button placement is removed), still two lines; outline thinned to .5px. Checked at 390px.
 - 2026-11-04 (round 61) — Cover note: white text (--paper-warm) with a 1px burgundy outline via text-shadow, at the owner's request. Position kept. Checked at 390px.
