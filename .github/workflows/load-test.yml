@@ -1,0 +1,81 @@
+# Manual load test: many runners, each with its own IP, visit the site like guests do.
+# Start it from the Actions tab (Run workflow). It never runs on its own.
+name: Load test
+
+on:
+  workflow_dispatch:
+    inputs:
+      runners:
+        description: Number of machines (max 20 at once on the free plan)
+        default: '20'
+      guests:
+        description: Guests per machine
+        default: '25'
+      spread:
+        description: Seconds over which the guests of one machine arrive
+        default: '60'
+      base:
+        description: Site to test
+        default: https://tuan-dung-wedding.com
+
+permissions:
+  contents: read
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      start: ${{ steps.plan.outputs.start }}
+    steps:
+      - id: plan
+        env:
+          RUNNERS: ${{ inputs.runners }}
+        run: |
+          echo "matrix=$(seq 1 "$RUNNERS" | jq -cs .)" >> "$GITHUB_OUTPUT"
+          # All machines wait for the same moment, so the guests really overlap
+          echo "start=$(( $(date +%s) + 120 ))" >> "$GITHUB_OUTPUT"
+
+  guests:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: ${{ fromJson(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/load-test
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Visit the site
+        env:
+          BASE: ${{ inputs.base }}
+          GUESTS: ${{ inputs.guests }}
+          SPREAD: ${{ inputs.spread }}
+          START: ${{ needs.plan.outputs.start }}
+          VISITS_FILE: visits-${{ matrix.runner }}.json
+        run: |
+          wait=$(( START - $(date +%s) ))
+          if [ "$wait" -gt 0 ]; then sleep "$wait"; fi
+          node .github/load-test/guests.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: visits-${{ matrix.runner }}
+          path: visits-${{ matrix.runner }}.json
+
+  summary:
+    needs: guests
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/load-test
+      - uses: actions/download-artifact@v4
+        with:
+          path: results
+      - run: node .github/load-test/summary.mjs results | tee -a "$GITHUB_STEP_SUMMARY"
