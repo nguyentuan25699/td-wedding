@@ -57,8 +57,8 @@ window.WEDDING_CONFIG = {
     hero: "assets/images/web/hero.jpg", // 933×1400, 207 KB
     // Album: { src, alt, w, h } with the real pixel size of each file.
     album: [
-      { src: "assets/images/web/album/001.jpg", w: 638, h: 1000 },
-      { src: "assets/images/web/album/002.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/001.jpg", w: 666, h: 1000 },
+      { src: "assets/images/web/album/002.jpg", w: 638, h: 1000 },
       { src: "assets/images/web/album/003.jpg", w: 1000, h: 667 },
       { src: "assets/images/web/album/004.jpg", w: 666, h: 1000 },
       { src: "assets/images/web/album/005.jpg", w: 666, h: 1000 },
